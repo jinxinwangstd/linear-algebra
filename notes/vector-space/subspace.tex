@@ -1,0 +1,73 @@
+\documentclass[onecolumn]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\geometry{a4paper,scale=0.8}
+
+\newcommand*\textinmath[1]{\thickspace\textnormal{#1}\thickspace}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\title{Notes of "Subspace"}
+\author{Jinxin Wang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+\begin{itemize}
+  \item The sum of two subspaces of a vector space
+  \begin{itemize}
+    \item Def: The sum of two subspaces of a vector space
+    \begin{itemize}
+      \item Rmk: The sum of two subspaces is still a subspace
+    \end{itemize}
+    \item Prop: The existence of a basis of a subspace and the relation between the dimension of a space and the dimension of its subspace
+    \item Def: 向量空间的基与子空间相合
+    \begin{itemize}
+      \item Rmk: A method to find a basis of a vector space 与其一个子空间相合
+    \end{itemize}
+    \item Thm: The existence of a basis 与两个子空间相合
+    \begin{itemize}
+      \item Eg: An example that the theorem does not hold for three or more subspaces
+    \end{itemize}
+    \item Cor: The formula of the basis of the sum of two subspaces
+    \item TNta: k-dimensional plane, codimension (余维数) of a subspace, hyperplane (超平面), flag variety (旗簇)
+  \end{itemize}
+  \item The direct sum of two subspaces of a vector space
+  \begin{itemize}
+    \item Def: The linear independence and dependence of a class of subspaces
+    \item Prop: A necessary and sufficient condition for two subspaces to be linear independent
+    \begin{itemize}
+      \item Rmk: This proposition cannot be generalized to three or more subspaces
+    \end{itemize}
+    \item Thm: A necessary and sufficient condition for a class of subspaces to be linear independent in terms of intersection
+    \item Thm: A necessary and sufficient condition for a class of subspaces to be linear independent in terms of basis
+    \item Thm: A necessary and sufficient condition for a class of subspaces to be linear independent in terms of dimension
+    \item Def: The (internal) direct sum of a class of subspaces of a vector space
+    \item Thm: The existence of the complement subspace of a subspace
+    \item Def: The (external) direct sum of two vector spaces
+    \item Rmk: There is no difference in nature between internal direct sums and external direct sums
+  \end{itemize}
+\end{itemize}
+
+\end{document}

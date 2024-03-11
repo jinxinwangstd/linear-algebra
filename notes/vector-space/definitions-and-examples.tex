@@ -1,0 +1,171 @@
+\documentclass[onecolumn]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\geometry{a4paper,scale=0.8}
+
+\newcommand*\textinmath[1]{\thickspace\textnormal{#1}\thickspace}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\title{Notes of "Definitions and Examples"}
+\author{Jinxin Wang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+\begin{itemize}
+  \item Definitions related to vector spaces
+  \begin{itemize}
+    \item Def: (Left) group action
+    \item Def: Vector space (linear space)
+    \item Def: 实向量空间和复向量空间
+  \end{itemize}
+  \item Prop: Properties of operations in a vector space
+  \item Examples of vector spaces
+  \begin{itemize}
+    \item Eg: Zero vector space
+    \item Eg: Vector spaces of numbers, vectors, or matrices
+    \begin{itemize}
+      \item Eg: 父域向量空间
+      \item Eg: Coordinate space
+      \item Eg: $M_{m,n}(K)$和$M_{n}(K)$
+    \end{itemize}
+    \item Eg: Vector spaces of mappings
+    \begin{itemize}
+      \item Eg: $\lbrace (a_i)_{i \in \mathbb{N}} \mid a_i \in \mathbb{R} \rbrace$
+      \item Eg: $\lbrace (a_i)_{i \in \mathbb{N}} \mid a_i \in \mathbb{R}, a_i = a_{i-1} + a_{i-2}, i \geq 2 \rbrace$
+      \item Eg: 集合$X$到向量空间$U$的映射空间$U^X$
+      \item Eg: The set of real-valued functions defined on $\mathbb{R}$
+      \item Eg: The set of real-valued continuous functions $C(X)$ defined on a subset $X \subset \mathbb{R}$
+    \end{itemize}
+    \item Eg: Vector spaces of polynomials
+    \begin{itemize}
+      \item Eg: $m$元多项式环$K[x_1, x_2, \ldots, x_m]$ where $K$ is a field
+      \item Eg: $m$元多项式环$K[x_1, x_2, \ldots, x_m]$中次数为$n$的齐次多项式全体加上零多项式
+      \item Eg: $m$元多项式环$K[x_1, x_2, \ldots, x_m]$中次数不超过$n$的多项式全体
+    \end{itemize}
+  \end{itemize}
+  \item Linear subspaces
+  \begin{itemize}
+    \item Def: A linear (or vector) subspace of a vector space
+    \begin{itemize}
+      \item Rmk: Two trivial subspaces of every vector space
+    \end{itemize}
+    \item Examples of linear subspaces
+    \begin{itemize}
+      \item Eg: Any line passing through the origin in $\mathbb{E}^2$
+      \item Eg: All vectors parallel to a vector in $\mathbb{E}^3$ forms a subspace of $\mathbb{E}^3$
+      \item Eg: The set of solution of the linear system $Ax = 0$ where $A \in M_{m,n}(K)$ forms a subspace of $K^n$
+      \item Eg: $\mathbb{R}$的子集$X$上的全体可微函数$C^1(X)$是$C(X)$的一个子空间
+      \item Eg: 实数域上定义的偶函数全体，周期函数全体，形如$ae^x + be^-x, a,b \in \mathbb{R}$的函数全体都是实数域上的实函数空间的子空间
+    \end{itemize}
+    \item Prop: The intersection of any collection of subspaces of a space is a subspace of it
+  \end{itemize}
+\end{itemize}
+
+\section{Operational properties of a vector space}
+
+\begin{proposition}
+  Let $-v$ denote the inverse element of $v$.
+  \begin{description}
+    \item[P1] $0v = 0$
+    \item[P2] $a0 = 0$
+    \item[P3] $(-1)v = -v$
+    \item[P4] $a(-v) = -av$
+    \item[P5] $a(u - v) = au - av$
+    \item[P6] $(a - b)v = av - bv$
+    \item[P7] $av = 0 \Rightarrow a = 0 \textinmath{or} v = 0$ 
+  \end{description}
+\end{proposition}
+\begin{proof}
+  Just prove a few of them:
+  \begin{description}
+    \item[P1] 
+    \item[P3] 
+    \item[P7] 
+  \end{description}
+\end{proof}
+
+\section{Examples of vector spaces}
+
+\begin{example}[Coordinate space]
+  All row vectors $(a_1, a_2, \ldots, a_n)$ of length $n$ whose elements are in the field $K$.
+
+  Same as all column vectors $[a_1, a_2, \ldots, a_n]$ of length $n$ whose elements 
+  are in the field $K$.
+\end{example}
+
+\begin{example}[Zero vector space]
+  The trivial abel group: $\lbrace 0 \rbrace$, with the scalar multiplication 
+  with the field $K$ defined as: $a0 = 0$ for each $a \in K$.
+
+  It is clear that the zero vector space is a vector space on any field.
+\end{example}
+
+\begin{example}[The vector space of real-valued functions]
+  Let $E$ be a set. The set of all real-valued functions defined on $E$ is a vector 
+  space on $\mathbb{R}$ with the following addition and scalar multiplication 
+  operations:
+  \[
+    (f + g)(x) = f(x) + g(x)   
+  \]
+  \[
+    (af)(x) = a(f(x))
+  \]
+  for each $x \in E$ and $a \in \mathbb{R}$.
+\end{example}
+
+\begin{example}[The vector space of mappings to a vector space]
+  Let $U$ be a vector space on the field $K$. The set of all mappings from a set 
+  $X$ to $U$ is a vector space on $K$, denoted $U^X$. The addition and scalar 
+  multiplication are defined as:
+  \[
+    (f + g)(x) = f(x) + g(x)
+  \]
+  \[
+    (af)(x) = a(f(x))
+  \]
+  Since $f(x), g(x) \in U$ and $a \in K$, it holds that $f(x) + g(x) \in U$ and 
+  $a(f(x)) \in U$ given that $U$ is a vector space on $K$. Therefore, $U^X$ is a 
+  vector space on $K$ is guaranteed by that $U$ is a vector space on $K$.
+
+  Especially, $K^X$ is a vector space on $K$. The above example, which is the 
+  vector space of all real-valued functions defined on a set $E$, is actually 
+  $\mathbb{R}^E$. Hence, $U^X$ is a generalization of the vector space of 
+  real-valued functions.
+\end{example}
+
+\begin{example}[]
+  
+\end{example}
+
+\section{Linear subspaces}
+
+\begin{definition}[A linear (or vector) subspace of a vector space]
+  Let $U$ be a subset of a vector space $V$ on a field $K$. $U$ is a linear subspace 
+  of $V$ if it is an addition subgroup of $V$, and $\forall k \in K$ and $\forall 
+  u \in U$ it holds that $ku \in U$.
+\end{definition}
+
+\end{document}

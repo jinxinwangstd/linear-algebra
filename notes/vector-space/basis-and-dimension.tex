@@ -1,0 +1,107 @@
+\documentclass[onecolumn]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\geometry{a4paper,scale=0.8}
+
+\newcommand*\textinmath[1]{\thickspace\textnormal{#1}\thickspace}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\title{Notes of "Basis and Dimension"}
+\author{Jinxin Wang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+\begin{itemize}
+  \item Basis and dimension
+  \begin{itemize}
+    \item Def: A basis and its basis vectors of a vector space
+    \item Examples of a basis and its basis vectors of a vector space
+    \begin{itemize}
+      \item Eg: The standard basis of the coordinate space
+    \end{itemize}
+    \item Thm: The uniqueness of the linear representation (the coordinate) of every vector in a space with a basis
+    \item Thm: The existence of a (linear) isomorphism between a space of $n$ dimension and $K^n$
+    \item Def: A (linear) homomorphism between two vector spaces, injective homomorphism and surjective homomorphism
+    \item Examples of (linear) homomorphisms between two vector spaces
+    \begin{itemize}
+      \item Eg: $\phi: \mathbb{R}^n \to \mathbb{R}^{\mathbb{N}}$
+      \item Eg: $\phi: \mathbb{R}^{\mathbb{N}} \to \mathbb{R}^n$
+    \end{itemize}
+    \item Def: A (linear) isomorphism between two vector spaces
+    \begin{itemize}
+      \item Rmk: Two vector spaces can form an isomorphism only if they are on the same field.
+      \item Rmk: An isomorphic map between two vector spaces maps the zero vector in one space to the one in the other, and it maps a basis of one space to a basis of the other.
+      \item Rmk: If $\phi: V \to U$, $\psi: U \to W$ are both isomorphic maps, then $\phi^{-1}: U \to V$ and $\phi \psi: V \to W$ are both isomorphic maps.
+    \end{itemize}
+    \item Examples of (linear) isomorphism between two vector spaces
+    \begin{itemize}
+      \item Eg: $\mathbb{C} \simeq \mathbb{R}^2$
+      \item Eg: 实斐波那契数列空间 $\simeq \mathbb{R}^2$
+      \item Eg: $M_n(K) \simeq K^{n^2}$
+    \end{itemize}
+  \end{itemize}
+  \item Properties of a basis of a vector space
+  \begin{itemize}
+    \item Prop: The uniqueness of the number of vectors in every basis of a vector space
+    \item Def: The dimension of a vector space
+    \item Prop: A necessary and sufficient condition of two vector spaces on the same field to be isomorphic
+    \item Thm: The linear independence of $n+1$ vectors of a space of dimension $n$ $(n < \infty)$
+    \item Thm: Two necessary and sufficent conditions of a set of vectors to be a basis of a space of dimension $n$ $(n < \infty)$
+    \item Thm: The possibility of a set of linear independent vectors to become a basis of a space of dimension $n$ $(n < \infty)$
+    \item Def: Finite-dimensional spaces and infinite-dimensional spaces
+    \begin{itemize}
+      \item Examples of finite-dimensional spaces
+      \item Examples of infinite-dimensional spaces
+    \end{itemize}
+    \item Def: A maximal linearly independent subset of a finite-dimensional space
+    \item Thm: Existence, the uniqueness of the number of vectors, and the linear span of maximal linearly independent subsets of a finite-dimensional space
+    \item Def: The rank of a subset of a vector space 
+  \end{itemize}
+  \item Transition matrix (Change-of-basis matrix)
+  \begin{itemize}
+    \item Def: A transition matrix from a basis to another
+    \begin{itemize}
+      \item Rmk: The uniqueness of the transition matrix from a basis to another
+    \end{itemize}
+    \item Rmk: Transform the coordinate of a vector under a basis of its space to the coordinate under another basis with the transition matrix between the two basis
+    \item Thm: The inversibility of the transition matrix between two basis of a vector space and its meaning
+    \item Thm: The composition of two transition matrices between three basis of a vector space and its meaning
+  \end{itemize}
+  \item The order of the vectors in a basis
+  \begin{itemize}
+    \item Rmk: By default, a basis of a vector space is an ordered set of vectors, and its order is fixed
+  \end{itemize}
+\end{itemize}
+
+\section{Basis and dimension}
+
+\section{Properties of a basis of a vector space}
+
+\section{Transition matrix (Change-of-basis matrix)}
+
+\section{The order of the vectors in a basis}
+
+\end{document}

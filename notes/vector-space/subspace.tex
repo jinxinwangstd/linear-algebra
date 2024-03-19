@@ -37,9 +37,9 @@
 \begin{itemize}
   \item The sum of two subspaces of a vector space
   \begin{itemize}
-    \item Def: The sum of two subspaces of a vector space
+    \item Def: The sum of two (or finite) subspaces of a vector space
     \begin{itemize}
-      \item Rmk: The sum of two subspaces is still a subspace
+      \item Rmk: The sum of two (or finite) subspaces is still a subspace
     \end{itemize}
     \item Prop: The existence of a basis of a subspace and the relation between the dimension of a space and the dimension of its subspace
     \item Def: 向量空间的基与子空间相合
@@ -63,8 +63,8 @@
     \item Thm: A necessary and sufficient condition for a class of subspaces to be linear independent in terms of intersection
     \item Thm: A necessary and sufficient condition for a class of subspaces to be linear independent in terms of basis
     \item Thm: A necessary and sufficient condition for a class of subspaces to be linear independent in terms of dimension
+    \item Thm: A necessary and sufficient condition for a class of subspaces to be linear independent in terms of the decomposition of vectors in the sum of these subspaces
     \item Def: The (internal) direct sum of a class of subspaces of a vector space
-    \item Prop: Two necessary and sufficient conditions of the sum of a class of subspaces to be a direct sum
     \item Thm: The existence of the complemented subspace of a subspace
     \begin{itemize}
       \item Rmk: Complemented subspaces of a subspace are not unique.
@@ -76,15 +76,29 @@
 
 \section{The sum of two subspaces of a vector space}
 
+\begin{definition}[The sum of two (or finite) subspaces of a vector space]
+  Let $V$ be a vector space, and $U$ and $W$ be two subspaces of $V$, then the sum of $U$ and $W$, denoted by $U + W$, is a set as follows:
+  \begin{equation}
+    U + W = \left\{ u + w \mid u \in U, w \in W \right\} 
+  \end{equation}
+  Similarly, the sum of finite subspaces $U_1, U_2, \ldots, U_n$ is defined as
+  \begin{equation}
+    U_1 + U_2 + \cdots + U_n = \left\{ u_1 + u_2 + \cdots + u_n \mid u_i \in U_i, i = 1,2,\ldots,n \right\}
+  \end{equation}
+\end{definition}
+
 \section{The direct sum of two subspaces of a vector space}
 
-\begin{proposition}[Two necessary and sufficient conditions of the sum of a class of subspaces to be a direct sum]
-  Let $V$ be a vector space and $W_1, W_2, \ldots, W_k$ be subspaces of $V$. The following statements are equivalent:
-  \begin{description}
-    \item[P1] $W_1 + W_2 + \cdots + W_k = W_1 \oplus W_2 \oplus \cdots \oplus W_k$
-    \item[P2] $W_1 + W_2 + \cdots + W_k$中的任意向量分解为求和的各子空间的向量之和的方式唯一。
-    \item[P3] $V$中零元分解为求和的各子空间的向量之和的方式唯一，即全为零向量。
-  \end{description}
-\end{proposition}
+\begin{definition}[The linear independence and dependence of finite subspaces]
+  A finite class of subspaces $U_1, U_2, \ldots, U_n$ are linear independent if the equation $u_1 + u_2 + \cdots + u_n = 0$ where $u_i \in U_i, i = 1,2,\ldots,n$ iff. $u_1 = u_2 = \cdots = u_n = 0$
+\end{definition}
+
+\begin{theorem}[A necessary and sufficient condition for a class of subspaces to be linear independent in terms of basis]
+  Let $V$ be a vector space and $U_1, U_2, \ldots, U_n$ be subspaces of $V$. $U_1, U_2, \ldots, U_n$ are linear independent if and only if the union of the basis of all subspaces are linear independent.
+\end{theorem}
+
+\begin{theorem}[A necessary and sufficient condition for a class of subspaces to be linear independent in terms of the decomposition of vectors in the sum of these subspaces]
+  Let $V$ be a vector space and $U_1, U_2, \ldots, U_n$ be subspaces of $V$. $U_1, U_2, \ldots, U_n$ are linear independent if and only if there exists a unique way to express a vector in $U_1 + U_2 + \cdots + U_n$ as $u_1 + u_2 + \cdots + u_n = 0$ where $u_i \in U_i, i = 1, 2, \ldots, n$.
+\end{theorem}
 
 \end{document}

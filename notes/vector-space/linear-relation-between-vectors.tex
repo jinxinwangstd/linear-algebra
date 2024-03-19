@@ -1,0 +1,101 @@
+\documentclass[onecolumn]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\geometry{a4paper,scale=0.8}
+
+\newcommand*\textinmath[1]{\thickspace\textnormal{#1}\thickspace}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\title{Notes of "Linear Relation between Vectors"}
+\author{Jinxin Wang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+\begin{itemize}
+  \item Linear combination and linear span
+  \begin{itemize}
+    \item Def: A linear combination of a set of vectors
+    \item Def: The linear span of a set of vectors
+    \begin{itemize}
+      \item Rmk: The linear span of a set of vectors is a subspace of the space to which the set of vectors belongs
+      \item Rmk: The linear span of a set of vectors is the minimal subspace containing the set of vectors
+    \end{itemize}
+  \end{itemize}
+  \item Linear dependence and independence
+  \begin{itemize}
+    \item Def: A set of vectors is linear dependent (independent)
+    \item Examples of linear dependent and independent vectors
+    \begin{itemize}
+      \item Eg:
+    \end{itemize}
+  \end{itemize}
+  \item Properties of linear independent and dependent vectors
+  \begin{itemize}
+    \item Thm: A few sufficient or necessary and sufficient conditions for a set of vectors to be linear dependent
+    \item Thm: The linear dependence of $m$ linear combinations out of $n$ vectors
+    \item Thm: Some conclusions about the relation between linear combinations and linear dependence
+  \end{itemize}
+\end{itemize}
+
+\section{Linear combination and linear span}
+
+\begin{definition}[The linear span of a set of vectors]
+  The linear span of a subset $M$ of a vector space $V$ is defined as
+  \begin{equation}
+    \left\langle M \right\rangle = \left\{ a_1x_1 + a_2x_2 + \cdots + a_kx_k \mid a_1, a_2, \ldots, a_k \in K, x_1, x_2, \ldots, x_k \in M, k \in \mathbb{N}^+ \right\} 
+  \end{equation}
+\end{definition}
+
+\section{Linear dependence and independence}
+
+\section{Properties of linear independent and dependent vectors}
+
+\begin{theorem}[A few sufficient or necessary and sufficient conditions for a set of vectors to be linear dependent]
+  We have the following conditions for a set of vectors to be linear dependent:
+  \begin{description}
+    \item[T1] A set of vectors containing the zero vector are linear dependent.
+    \item[T2] A set of at least 2 vectors are linear dependent if and only if one of the vectors is a linear combination of the rest.
+    \item[T3] If a subset is linear dependent, then the whole set is linear dependent.
+  \end{description}
+\end{theorem}
+
+\begin{theorem}[The linear dependence of $m$ linear combinations out of $n$ vectors]
+  Let $u_1, u_2, \ldots, u_m$ are linear combinations of $v_1, v_2, \ldots, v_n$:
+  \begin{description}
+    \item[T1] If $m > n$, then $u_1, u_2, \ldots, u_m$ are linear dependent.
+    \item[T2] If $u_1, u_2, \ldots, u_m$ are linear independent, then $m \leq n$.
+  \end{description}
+\end{theorem}
+
+\begin{theorem}[Some conclusions about the relation between linear combinations and linear dependence]
+  We have the following conclusions about linear combinations of a set of vectors:
+  \begin{description}
+    \item[T1] If $v_1, v_2, \ldots, v_n$ are linear independent, $v_1, v_2, \ldots, v_n, v$ are linear dependent, then $v$ is a linear combination of $v_1, v_2, \ldots, v_n$.
+    \item[T2] If $v_1, v_2, \ldots, v_n$ are linear independent, $v$ is not a linear combination of $v_1, v_2, \ldots, v_n$, then $v_1, v_2, \ldots, \\ v_n, v$ are linear independent.
+    \item[T3] If $u$ is a linear combination of $v_1, v_2, \ldots, v_n$, and every $v_i$ is a linear combination of $w_1, w_2, \ldots, w_m$, then $u$ is a linear combination of $w_1, w_2, \ldots, w_m$.
+  \end{description}
+\end{theorem}
+\end{document}

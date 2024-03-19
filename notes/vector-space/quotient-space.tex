@@ -35,13 +35,51 @@
 
 \section{Overview}
 \begin{itemize}
-  \item Rmk: The motivation of the quotient space is to define a subspace which is naturally isomorphic to any complemented subspace of a subspace
-  \item Def: The quotient space of a vector space by a subspace
+  \item Motivation and definition of quotient space
   \begin{itemize}
-    \item Rmk: The operations defined on $V \slash W$ is well-defined, i.e. do not depend on the choice of representatives
+    \item Rmk: The motivation of the quotient space is to define a subspace which is naturally isomorphic to any complemented subspace of a subspace
+    \item Def: The quotient space of a vector space by a subspace
+    \begin{itemize}
+      \item Rmk: The operations defined on $V \slash W$ is well-defined, i.e. do not depend on the choice of representatives
+    \end{itemize}
+    \item Examples of quotient spaces
+    \begin{itemize}
+      \item Eg: The quotient space of $\mathbb{R}^2$ by the $x$-axis
+    \end{itemize}
   \end{itemize}
-  \item Thm: The isomorphism between the quotient space of a vector space by a subspace and a complemented subspace
-  \item Cor: The relation between the dimensions of a vector space, a subspace, and a complemented subspace of the subspace
+  \item Properties of quotient space
+  \begin{itemize}
+    \item Thm: The isomorphism between the quotient space of a vector space by a subspace and a complemented subspace
+    \item Cor: The relation between the dimensions of a vector space, a subspace, and the quotient space of the vector space mod by the subspace
+  \end{itemize}
 \end{itemize}
+
+\section{Motivation and definition of quotient space}
+
+\begin{definition}[The quotient space of a vector space by a subspace]
+  Let $V$ be a space over the field $K$ and $U$ be a subspace of $V$. 
+
+  We can define a binary relation in $V$ as follows:
+  \[
+    x \sim y \Leftrightarrow x - y \in U
+  \]
+  It is clear that $\sim$ is a equivalence relation.
+
+  The set of all equivalent classes under the above equivalence relation is denoted as $V / U$, and the class where a vector $x$ belongs is denoted as $\bar{x}$. It is clear that
+  \[
+    \bar{x} = x + U = \left\{ x + u \mid u \in U \right\}
+  \]
+
+  We can define the addition and the scalar multiplication with $K$ as follows:
+  \[
+    \bar{x} + \bar{y} = \bar{x + y}
+  \]
+  \[
+    a\bar{x} = \bar{ax}
+  \]
+  It is easy to verify that $V/U$ is a vector space over $K$, and it is called the quotient space of $V$ by $U$.
+\end{definition}
+
+\section{Properties of quotient space}
 
 \end{document}

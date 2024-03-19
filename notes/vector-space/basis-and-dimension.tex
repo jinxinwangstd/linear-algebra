@@ -38,6 +38,9 @@
   \item Basis and dimension
   \begin{itemize}
     \item Def: A basis and its basis vectors of a vector space
+    \begin{itemize}
+      \item Rmk: A basis of a vector contains only finite vectors
+    \end{itemize}
     \item Examples of a basis and its basis vectors of a vector space
     \begin{itemize}
       \item Eg: The standard basis of the coordinate space
@@ -76,9 +79,9 @@
       \item Examples of finite-dimensional spaces
       \item Examples of infinite-dimensional spaces
     \end{itemize}
-    \item Def: A maximal linearly independent subset of a finite-dimensional space
-    \item Thm: Existence, the uniqueness of the number of vectors, and the linear span of maximal linearly independent subsets of a finite-dimensional space
-    \item Def: The rank of a subset of a vector space 
+    \item Def: A maximal linearly independent subset of a set of vectors
+    \item Thm: Existence, uniqueness of the number of vectors, and the linear span of maximal linearly independent subsets of a set in a finite-dimensional space
+    \item Def: The rank of a set of vectors
   \end{itemize}
   \item Transition matrix (Change-of-basis matrix)
   \begin{itemize}
@@ -98,7 +101,51 @@
 
 \section{Basis and dimension}
 
+\begin{definition}[A basis and its basis vectors of a vector space]
+  A set of vectors $v_1, v_2, \ldots, v_n$ is said to be a basis of a space $V$ if they are linear independent and their linear span is $V$.
+\end{definition}
+
+\begin{remark}[A basis of a vector contains only finite vectors]
+  A basis of a vector contains only finite vectors.
+\end{remark}
+
+\begin{definition}[A (linear) homomorphism between two vector spaces, injective homomorphism and surjective homomorphism]
+  Two vector spaces $U$ and $V$ over a field $K$ are homomorphic if there exists a bijective $\phi: V \to U$ such that $\forall a, b \in K$ and $\forall u, v \in V$ we have
+  \begin{equation}
+    \phi(au + bv) = a \phi(u) + b \phi(v)
+  \end{equation}
+\end{definition}
+
 \section{Properties of a basis of a vector space}
+
+\begin{theorem}[Two necessary and sufficent conditions of a set of vectors to be a basis of a space of dimension $n$ $(n < \infty)$]
+  Let $V$ be a vector space of dimension $n$, then:
+  \begin{description}
+    \item[T1] If $n$ vectors $v_1, v_2, \ldots, v_n$ in $V$ are linear independent, then they form a basis of $V$.
+    \item[T2] If the linear span of $n$ vectors $v_1, v_2, \ldots, v_n$ in $V$ is $V$ itself, then $v_1, v_2, \ldots, v_n$ are linear independent, and thus are a basis of $V$.
+  \end{description}
+\end{theorem}
+
+\begin{definition}[Finite-dimensional and infinite-dimensional spaces]
+  If any finite set of vectors in a space cannot span the space, then the space is called a infinite-dimensional space. Otherwise, it is a finite-dimensional space.
+\end{definition}
+
+\begin{definition}[A maximal linearly independent subset of a set of vectors]
+  A subset of set of vectors is called a maximal linearly independent subset if the vectors in the subset are linear independent and every other vector in the set is a linear combination of the vectors in the subset.
+\end{definition}
+
+\begin{theorem}[Existence, uniqueness of the number of vectors, and the linear span of maximal linearly independent subsets of a set in a finite-dimensional space]
+  Let $S$ be a set of vectors in a finite-dimensional space, and it contains non-zero vector, then:
+  \begin{description}
+    \item[T1] $S$ contains maximal linearly independent subsets.
+    \item[T2] Any two maximal linearly independent subsets of $S$ consists of the same number of vectors.
+    \item[T3] A maximal linearly independent subset of $S$ is a basis of $\left\langle S \right\rangle $.
+  \end{description}
+\end{theorem}
+
+\begin{definition}[The rank of a set of vectors]
+  The rank of a set of vectors is defined as the dimension of the linear span of the set of vectors.
+\end{definition}
 
 \section{Transition matrix (Change-of-basis matrix)}
 

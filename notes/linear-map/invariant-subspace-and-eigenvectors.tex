@@ -1,0 +1,154 @@
+\documentclass[onecolumn]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\geometry{a4paper,scale=0.8}
+
+\newcommand*\textinmath[1]{\thickspace\textnormal{#1}\thickspace}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\title{Notes of "Invariant Subspace and Eigenvectors"}
+\author{Jinxin Wang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+\begin{itemize}
+  \item Invariant subspace
+  \begin{itemize}
+    \item Def: An invariant subspace for a linear operator
+    \begin{itemize}
+      \item Rmk: Two trivial invariant subspaces for a linear operator
+    \end{itemize}
+    \item Rmk: Connection between an invariant subspace for a linear operator and a matrix of the operator
+    \item Thm: A necessary and sufficient condition for the matrix of a linear operator under a basis has the form of block-wise diagonal matrix
+    \item Rmk: Generalization of the above theorem to multiple invariant subspaces for a linear operator
+    \item Rmk: Specialization of the above remark to invariant subspaces of dimension $1$
+    \item Prop: Properties of invariant subspaces for a linear operator
+  \end{itemize}
+  \item Eigenvectors and characteristic polynomial
+  \begin{itemize}
+    \item Def: Eigenvector and eigenvalue of a linear operator
+    \item Rmk: Connection between eigenvectors and invariant subspaces
+    \item Rmk: 
+    \item Def: Eigenspace and geometric multiplicity
+    \item Def: Algebraic multiplicity of a eigenvalue
+  \end{itemize}
+  \item The criterion of diagonalizable linear operators
+  \begin{itemize}
+    \item Def: Diagonalizable linear operator
+    \item Rmk: A equivalent condition for a linear operator to be diagonalizable in terms of eigenvectors
+  \end{itemize}
+  \item The existence of invariant subspaces
+\end{itemize}
+
+\section{Invariant subspace}
+\begin{definition}[An invariant subspace for a linear operator]
+  Let $\mathcal{A}$ be a linear operator on a space $V$. A subspace $U$ of $V$ 
+  is called an invariant subspace for $\mathcal{A}$ if $\mathcal{A}U \subset U$, 
+  where $\mathcal{A}U = \left\{ \mathcal{A}x \mid x \in U \right\}$.
+\end{definition}
+
+\begin{remark}[Connection between an invariant subspace for a linear operator and a matrix of the operator]
+  Let $U$ be an invariant subspace for a linear operator $\mathcal{A}$ on a 
+  space $V$. Choose a basis of $U$ and expand it into a basis of $V$ as $\left\{ 
+  e_1, e_2, \ldots, e_n \right\}$. Suppose among them $e_{i+1}, e_{i+2}, \ldots, 
+  e_j (i < j)$ are the basis of $U$ and $A_U$ is the matrix of the restriction 
+  $\mathcal{A}_U$ under the basis $e_{i+1}, e_{i+2}, \ldots, e_j$. Then the 
+  matrix of $\mathcal{A}$ under this basis is that
+  \[
+    \begin{pmatrix}
+      A_{11} & 0 & A_{13} \\
+      A_{21} & A_U & A_{23} \\
+      A_{31} & 0 & A_{33} \\
+    \end{pmatrix}
+  \]
+  in which $A_{11}$ is a square matrix of order $i$, and $A_{33}$ is a square matrix of order $n - j$.
+
+  Conversely, if the matrix of $\mathcal{A}$ under a basis $\left\{e_1, e_2, 
+  \ldots, e_n \right\}$ has the above form, i.e. , then the linear span 
+  $\left\langle e_{i+1}, e_{i+2}, \ldots, e_j \right\rangle$ is an invariant 
+  subspace for $\mathcal{A}$.
+\end{remark}
+
+\begin{remark}[Specialization of the above remark to invariant subspaces of dimension $1$]
+  If the space $V$ is a direct sum of $n$ invariant subspaces $V_1, V_2, \ldots, V_n$ of dimension $1$, then with a basis that is compatible with these subspaces, the matrix of the linear operator under this basis has the form as
+  \[
+    \begin{pmatrix}
+      a_1 & 0 & 0 & \cdots & 0 \\
+      0 & a_2 & 0 & \cdots & 0 \\
+      0 & 0 & a_3 & \cdots & 0 \\
+      \vdots & \vdots & \vdots & \ddots & \vdots \\
+      0 & 0 & 0 & \cdots & a_n \\
+    \end{pmatrix}
+  \]
+  which is a diagonal matrix.
+
+  Conversely, if the matrix of the linear operator under a basis is a diagonal 
+  matrix, then the space can be expressed as a direct sum of $n$ invariant 
+  subspaces of dimension $1$ for the operator.
+\end{remark}
+
+\section{Eigenvectors and characteristic polynomial}
+
+\begin{definition}[Eigenvector and eigenvalue of a linear operator]
+  
+\end{definition}
+
+\begin{remark}[Connection between eigenvectors and invariant subspaces]
+  Every non-zero vector in an invariant subspace of dimension $1$ for a linear 
+  operator is an eigenvector of the operator. Conversely, the linear span of an 
+  eigenvector of a linear operator is an invariant subspace for the operator.
+
+  Proof: Let $U$ be an invariant subspace of dimension $1$ for a linear operator $\mathcal{A}$ of the space $V$.
+  \begin{description}
+    \item[P1] For each non-zero vector $v \in U$, according to the definition of 
+    an invariant subspace, we have $\mathcal{A}v \in U$. Since $\dim V = 1$, $v$ 
+    is also a basis of $V$, and hence $\mathcal{A}v = \lambda v$. Therefore $v$ 
+    is an eigenvector of $\mathcal{A}$.
+    \item[P2] Given an eigenvector $v$ of $\mathcal{A}$ with corresponding 
+    eigenvalue $\lambda$, the linear span $\left\langle v \right\rangle = \left\{ 
+    \mu v \mid \mu \in K \right\}$, then $\mathcal{A}\left\langle v \right\rangle 
+    = \left\{ \mathcal{A} \mu v \mid \mu \in K\right\} = \left\{ \mu \mathcal{A} 
+    v \mid \mu \in K\right\} =  \left\{ \mu \lambda v \mid \mu \in K\right\} \in 
+    \left\langle v \right\rangle$. Therefore, $\left\langle v \right\rangle$ is 
+    an invariant subspace for $\mathcal{A}$.
+  \end{description}
+\end{remark}
+
+\section{The criterion of diagonalizable linear operators}
+
+\begin{definition}[Diagonalizable linear operator]
+  A linear operator is diagonalizable if the matrix of it under a basis is a diagonal matrix.
+\end{definition}
+\begin{remark}[A equivalent condition for a linear operator to be diagonalizable in terms of eigenvectors]
+  A linear operator $\mathcal{A}$ on a space $V$ is diagonalizable if and only 
+  if $V$ has a basis consists of eigenvectors of $\mathcal{A}$.
+
+  Proof: (TODO)
+\end{remark}
+
+\section{The existence of invariant subspaces}
+
+\end{document}

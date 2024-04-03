@@ -1,0 +1,75 @@
+\documentclass[onecolumn]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\geometry{a4paper,scale=0.8}
+
+\newcommand*\textinmath[1]{\thickspace\textnormal{#1}\thickspace}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\title{Notes of "Linear Map between Vector Spaces"}
+\author{Jinxin Wang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+\begin{itemize}
+  \item Definition and related concepts
+  \begin{itemize}
+    \item Def: A linear map from a space on $K$ to the other on $K$
+    \item Examples of linear maps
+    \begin{itemize}
+      \item Eg: A linear form of a vector space
+      \item Eg: Rotation on $\mathbb{R}^2$
+      \item Eg: The projection from $\mathbb{R}^3$ to its subspace $\left\{ (a, b, 0) \mid a, b \in \mathbb{R} \right\}$
+      \item Eg: $C^k(\mathbb{R}) \to \mathbb{R}_{k+1}\left[ x \right]$
+      \item Eg: $\mathcal{D}: K\left[ x \right] \to K\left[ x \right], f(x) \mapsto f'(x)$
+    \end{itemize}
+    \item Def: The kernel and image of a linear map
+    \begin{itemize}
+      \item Rmk: The kernel and image of a linear map are subspaces of the domain and codomain of the map respectively
+    \end{itemize}
+    \item Thm: The relationship of the dimensions of the kernel, the image and the domain of a linear map
+    \item Cor: The dimension of the image of a linear map is no greater than the dimension of the domain of the map
+  \end{itemize}
+  \item The matrix and the rank of a linear map
+  \begin{itemize}
+    \item Rmk: Generalize some properties of cases of linear maps
+    \item Prop: 一个线性映射与它在一组基上的像一一对应
+    \item Prop: 一个线性映射关于domain和codomain的各一组基由一个矩阵唯一表示
+    \item Thm: 线性映射与矩阵的对应关系
+  \end{itemize}
+  \item The algebraic structure of the set of linear maps from a space to the other
+  \item The correspondence between linear maps and matrices in terms of coordinate transformation
+\end{itemize}
+
+\section{Definition and related concepts}
+
+\section{The matrix and the rank of a linear map}
+
+\section{The algebraic structure of the set of linear maps from a space to the other}
+
+\section{The correspondence between linear maps and matrices in terms of coordinate transformation}
+
+\end{document}

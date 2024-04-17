@@ -25,6 +25,8 @@
 \newtheorem{remark}{Remark}
 \newtheorem{example}{Example}
 
+\DeclareMathOperator{\tr}{tr}
+
 \title{Notes of "Algebra of Linear Operator"}
 \author{Jinxin Wang}
 \date{}
@@ -34,5 +36,130 @@
 \maketitle
 
 \section{Overview}
+\begin{itemize}
+  \item Definition and basic properties of linear operators
+  \begin{itemize}
+    \item Def: Linear operator over a vector space
+    \item Rmk: The matrix of a linear operator under a basis
+    \item Examples of linear operators
+    \begin{itemize}
+      \item Eg: The zero operator
+      \item Eg: The reflection operator on $\mathbb{R}^2$
+      \item Eg: The rotation operator on $\mathbb{R}^2$
+      \item Eg: The stretch operation on any vector space
+      \item Eg: The differentiation operator $\mathcal{D} = \frac{d}{dt}$ on $K_n\lbrack t \rbrack$
+    \end{itemize}
+    \item Def: Inversible (degenerated, singular) operators, non-inversible (non-degenerated, \\ non-singular) operators, and the inverse operator of a linear operator
+    \item Thm: The relationship between the dimension of the kernel and the dimension of the image of a linear operator
+  \end{itemize}
+  \item The matrices of a linear operator under different bases
+  \begin{itemize}
+    \item Rmk: The transformation between the matrices of a linear operator under two different bases
+    \item Def: Matrix similarity
+    \item Thm: The matrices of a linear operator under different bases are similar
+    \item Rmk: The matrices of a linear operator under different bases have the same determinant
+    \item Def: The determinant of a linear operator
+    \item Def: The trace of a square matrix
+    \item Rmk: The matrices of a linear operator under different bases have the same trace
+    \item Def: The trace of a linear operator
+  \end{itemize}
+  \item Matrix similarity and its application
+  \begin{itemize}
+    \item Prop: Matrix similarity is a equivalence relation
+    \item Rmk: Our interest in the equivalence classes of matrix similarity and its application
+    \item Eg: Find the terms of Fibonacci sequence through the exponentiation of matrices
+    \item Rmk: Explore the equivalence classes of matrix similarity by changing the basis of the space
+  \end{itemize}
+  \item $\mathcal{L}(V)$ as an algebraic structure
+  \begin{itemize}
+    \item Nta: $\mathcal{L}(V)$
+    \item Rmk: $\mathcal{L}(V)$ is a vector space with multiplication
+    \item Def: An algebra over a field
+    \item Examples of algebras over a field
+    \begin{itemize}
+      \item $M_n(K)$
+      \item $K\lbrack x \rbrack$
+      \item An field is an algebra over itself
+    \end{itemize}
+    \item Rmk: $\sigma: \mathcal{L}(V) \to M_n(K)$ is an (algebra) isomorphism
+    \item Def: The determinant function and the trace function on $\mathcal{L}(V)$
+    \item Rmk: Some operational properties of the determinant function on $\mathcal{L}(V)$
+    \item Rmk: Some operational properties of the trace function on $\mathcal{L}(V)$
+  \end{itemize}
+  \item The generated subalgebra of a linear operator
+  \begin{itemize}
+    \item Def: The minimal polynomial of a linear operator
+    \item Thm: The existence of the minimal polynomial and its degree
+    \item Thm: A necessary and sufficient condition for a linear operator to be inversible in terms of the minimal polynomial
+    \item Thm: Every polynomial annihilating a linear operator is divisible by the minimal polynomial of it
+    \item Cor: The minimal polynomial of a linear operator is unique
+    \item Def: A linear operator is nilpotent and its index
+    \item Prop: A necessary and sufficient condition for a linear operator is nilpotent in terms of the minimal polynomial
+  \end{itemize}
+\end{itemize}
+
+\section{Definition and basic properties of linear operators}
+
+\begin{definition}[Linear operator over a vector space]
+  
+\end{definition}
+
+\begin{remark}[The matrix of a linear operator under a basis]
+  
+\end{remark}
+
+\begin{example}[The rotation operator on $\mathbb{R}^2$]
+  
+\end{example}
+
+\begin{example}[The differentiation operator $\mathcal{D} = \frac{d}{dt}$ on $K_n\lbrack t \rbrack$]
+  
+\end{example}
+
+\section{The matrices of a linear operator under different basis}
+
+\section{Matrix similarity}
+
+\begin{example}[Find the terms of Fibonacci sequence through the exponentiation of matrices]
+  The idea is expressing the recursive relation of the Fibonacci sequence in matrix. Consider the pair $(a_n, a_{n+1})$ and let
+  $A = \begin{pmatrix}
+    0 & 1 \\
+    1 & 1 \\
+  \end{pmatrix}$, then 
+  \[
+    \begin{pmatrix}
+      a_n \\
+      a_{n+1} \\
+    \end{pmatrix} = 
+    \begin{pmatrix}
+      0 & 1 \\
+      1 & 1 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+      a_{n-1} \\
+      a_n \\
+    \end{pmatrix} = A
+    \begin{pmatrix}
+      a_{n-1} \\
+      a_n \\
+    \end{pmatrix} = A^n
+    \begin{pmatrix}
+      a_0 \\
+      a_1 \\
+    \end{pmatrix}
+  \]
+\end{example}
+
+\section{$\mathcal{L}(V)$ as an algebraic structure}
+
+\begin{remark}[Some operational properties of the trace function on $\mathcal{L}(V)$]
+  Let $V$ be a vector space over a field $K$. Suppose $\mathcal{A}, \mathcal{B} \in \mathcal{L}(V)$ and $\lambda, \mu \in K$. The trace function on $\mathcal{L}(V)$ has the following operational properties:
+  \begin{description}
+    \item[R1] $\tr(\lambda \mathcal{A} + \mu \mathcal{B}) = \lambda \tr(\mathcal{A}) + \mu \tr(\mathcal{B})$
+    \item[R2] $\tr(\mathcal{A}\mathcal{B}) = \tr(\mathcal{B}\mathcal{A})$
+  \end{description}
+\end{remark}
+
+\section{The generated subalgebra of a linear operator}
 
 \end{document}

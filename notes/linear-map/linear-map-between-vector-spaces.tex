@@ -47,29 +47,90 @@
       \item Eg: $\mathcal{D}: K\left[ x \right] \to K\left[ x \right], f(x) \mapsto f'(x)$
     \end{itemize}
     \item Def: The kernel and image of a linear map
-    \begin{itemize}
-      \item Rmk: The kernel and image of a linear map are subspaces of the domain and codomain of the map respectively
-    \end{itemize}
+    \item Rmk: The kernel and image of a linear map are subspaces of the domain and codomain of the map respectively
     \item Thm: The relationship of the dimensions of the kernel, the image and the domain of a linear map
     \item Cor: The dimension of the image of a linear map is no greater than the dimension of the domain of the map
   \end{itemize}
-  \item The matrix and the rank of a linear map
+  \item One-to-one correspondence between linear maps and matrices
   \begin{itemize}
     \item Rmk: Generalize some properties of cases of linear maps
-    \item Prop: 一个线性映射与它在一组基上的像一一对应
-    \item Prop: 一个线性映射关于domain和codomain的各一组基由一个矩阵唯一表示
-    \item Thm: 线性映射与矩阵的对应关系
+    \item Rmk: A linear map from $V$ to $W$ is uniquely identified by the set of values on a basis
+    \item Rmk: A linear map from $V$ to $W$ is uniquely identified by a matrix under certain bases of $V$ and $W$
+    \item Def: The rank of a linear map
+    \item Thm: Two bijections from $\mathcal{L}(V, W)$ to $W^n$ and from $\mathcal{L}(V, W)$ to $M_{m, n}(K)$
   \end{itemize}
-  \item The algebraic structure of the set of linear maps from a space to the other
-  \item The correspondence between linear maps and matrices in terms of coordinate transformation
+  \item $\mathcal{L}(V, W)$ as an algebraic structure
+  \begin{itemize}
+    \item Nta: $\mathcal{L}(V, W)$ and $Hom(V, W)$
+    \item Rmk: $\mathcal{L}(V, W)$ is a vector space and a subspace of $W^V$
+    \item Thm: The bijection $\sigma: \mathcal{L}(V, W) \to M_{m, n}(K)$ is a (linear) isomorphism
+    \item Cor: The dimension of $\mathcal{L}(V, W)$ is $\dim V \cdot \dim W$
+    \item Rmk: The bijection $\sigma: \mathcal{L}(V, W) \to M_{m, n}(K)$ 保持乘法
+    \item Thm: $\dim Im(fg) \leq \dim Im(f)$ and $\dim Im(fg) \leq \dim Im(g)$
+  \end{itemize}
+  \item The matrix of a linear map represents its coordinate transformation
+  \begin{itemize}
+    \item Rmk: The matrix of a linear map under certain bases of $V$ and $W$ represents the coordinate transformation under the bases of $V$ and $W$
+  \end{itemize}
 \end{itemize}
 
 \section{Definition and related concepts}
 
-\section{The matrix and the rank of a linear map}
+\section{One-to-one correspondence between linear maps and matrices}
 
-\section{The algebraic structure of the set of linear maps from a space to the other}
+\begin{remark}[A linear map from $V$ to $W$ is uniquely identified by the set of values on a basis]
+  Let $V$ and $W$ be two vector spaces, and $e_1, e_2, \cdots, e_n$ be a basis 
+  of $V$. We use $\mathcal{L}(V, W)$ denote the set of linear operators from $V$ 
+  to $W$, and $W^n$ denote the set of $n$-tuple of vectors (e.g. $(\xi_1, \xi_2, 
+  \ldots, \xi_n)$) in $W$.
 
-\section{The correspondence between linear maps and matrices in terms of coordinate transformation}
+  We claim that given a basis $e_1, e_2, \cdots, e_n$ of $V$ there is a bijection 
+  $\sigma: \mathcal{L}(V, W) \to W^n, f \mapsto (\xi_1, \xi_2, \cdots, \xi_n)$ 
+  by setting $f(e_i) = \xi_i, i = 1,2,\ldots,n$.
+
+  First, a linear operator $f$ specifies a set of values on $e_1, e_2, \cdots, 
+  e_n$, i.e. specifies a set of vectors as $f(e_1), f(e_2), \cdots, f(e_n)$. 
+  Different linear vectors have different sets of values on $e_1, e_2, \cdots, 
+  e_n$. If two linear operators $f$ and $g$ have the same sets of values on $e_1, 
+  e_2, \cdots, e_n$, i.e. $f(e_i) = g(e_i), i = 1, 2, \ldots, n$, then for every 
+  vector $\alpha = \Sigma_{i=1}^n a_i e_i$ in $V$, we have $f(\alpha) = f(\Sigma_{i=1}^n 
+  a_i e_i) = \Sigma_{i=1}^n a_i f(e_i) = \Sigma_{i=1}^n a_i g(e_i) = g(\Sigma_{i=1}^n 
+  a_i e_i) = g(\alpha)$. Hence $f = g$. We can conclude that $sigma$ is a injection.
+
+  Second, given a set of vectors $\xi_1, \xi_2, \cdots, \xi_n$ in $W$, we can always 
+  define a linear map $f: V \to W$ by setting $f(e_i) = \xi_i, i = 1,2,\ldots,n$. 
+  By the definition of linear map, for every vector $v = \Sigma_{i=1}^n a_i e_i$ 
+  in $V$, $f(v) = f(\Sigma_{i=1}^n a_i e_i) = \Sigma_{i=1}^n a_i f(e_i)$ is determined. 
+  Hence the linear map $f$ is specified. Therefore, $\sigma$ is a surjection.
+\end{remark}
+
+\begin{remark}[A linear map from $V$ to $W$ is uniquely identified by a matrix under certain bases of $V$ and $W$]
+  Let $V$ and $W$ be two vector spaces, $e_1, e_2, \cdots, e_n$ be a basis of $V$, 
+  and $w_1, w_2, \cdots, w_m$ be a basis of $W$. We use $\mathcal{L}(V, W)$ denote 
+  the set of linear operators from $V$ to $W$, and $M_{m, n}(K)$ denote the set 
+  of matrices of order $m \times n$.
+
+  We claim that given a basis $e_1, e_2, \cdots, e_n$ of $V$ and a basis $w_1, 
+  w_2, \cdots, w_m$ of $W$ there is a bijection $\sigma: \mathcal{L}(V, W) \to 
+  M_{m, n}(K), f \mapsto M_f$ in which the $i$-th ($i = 1, 2, \ldots, n$) column 
+  of $M_f$ is the coordinate of $f(e_i)$ under the basis $w_1, w_2, \cdots, w_n$.
+
+  With the basis $e_1, e_2, \cdots, e_n$, we have a bijection $\sigma_1: \mathcal{L}(V, W) \to W^n$. If we can find another bijection $\sigma_2: W^n \to M_{m, n}(K)$, then the mapping $\sigma_2 \sigma_1$ is the one we are looking for in the claim.
+
+  With the basis $w_1, w_2, \cdots, w_m$, the bijection $\sigma_2: W_n \to 
+  M_{m, n}(K), (\xi_1, \xi_2, \cdots, \xi_n) \mapsto M$ can be constructed by 
+  setting $M = (\xi_1, \xi_2, \cdots, \xi_n)$, i.e. the $i$-th ($i = 1,2,\ldots,
+  n$) column of $M$ is the coordinate of $\xi_i$ under the basis $w_1, w_2, \cdots, 
+  w_m$. It is clear that $\sigma_2$ is a bijection. Therefore, the claim above 
+  is proved to be correct.
+\end{remark}
+
+\begin{theorem}[Two bijections from $\mathcal{L}(V, W)$ to $W^n$ and from $\mathcal{L}(V, W)$ to $M_{m, n}(K)$]
+  
+\end{theorem}
+
+\section{$\mathcal{L}(V, W)$ as an algebraic structure}
+
+\section{The matrix of a linear map represents its coordinate transformation}
 
 \end{document}

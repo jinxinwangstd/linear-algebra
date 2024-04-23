@@ -25,6 +25,8 @@
 \newtheorem{remark}{Remark}
 \newtheorem{example}{Example}
 
+\DeclareMathOperator{\Img}{Im}
+
 \title{Notes of "Invariant Subspace and Eigenvectors"}
 \author{Jinxin Wang}
 \date{}
@@ -41,6 +43,11 @@
     \begin{itemize}
       \item Rmk: Two trivial invariant subspaces for a linear operator
     \end{itemize}
+    \item Examples of invariant subspaces of linear operators
+    \begin{itemize}
+      \item $\Img \mathcal{A}$ and $\ker \mathcal{A}$ are invariant subspaces of $\mathcal{A}$
+      \item $\mathcal{A}\mathcal{B} = \mathcal{B}\mathcal{A}$, then $\Img \mathcal{B}$ and $\ker \mathcal{B}$ are invariant subspaces of $\mathcal{A}$
+    \end{itemize}
     \item Def: The restriction of a linear operator over an invariant space
     \item Rmk: Connection between an invariant subspace for a linear operator and a matrix of the operator
     \item Thm: A necessary and sufficient condition for the matrix of a linear operator under a basis has the form of block-wise diagonal matrix
@@ -52,16 +59,36 @@
   \begin{itemize}
     \item Def: Eigenvector and eigenvalue of a linear operator
     \item Rmk: Connection between eigenvectors and invariant subspaces
-    \item Rmk: 
-    \item Def: Eigenspace and geometric multiplicity
-    \item Def: Algebraic multiplicity of a eigenvalue
+    \item Rmk: The eigenvectors corresponding to the same eigenvalue and the zero vector form a subspace
+    \item Def: The eigenspace and the geometric multiplicity of an eigenvalue
+    \item Thm: A necessary and sufficient condition for a scalar to be an eigenvalue of a linear operator in terms of the roots of a polynomial
+    \item Def: The characteristic polynomial of a linear operator
+    \item Rmk: A method to find the roots of the characteristic polynomial of a linear operator
+    \item Def: The characteristic polynomial of a square matrix
+    \item Thm: The characteristic polynomials of similar square matrices are the same
+    \item Rmk: The existence of eigenvalues and eigenvectors of a linear operator on a general field and on an algebraically closed field
+    \item Study characteristic polynomials by invariant subspaces
+    \begin{itemize}
+      \item Thm: The characteristic polynomial of a linear operator is divisible by the characteristic polynomial of the restriction of the operator over an invariant subspace
+      \item Def: The algebraic multiplicity of an eigenvalue
+      \item Cor: The geometric multiplicity of an eigenvalue is no greater than its algebraic multiplicity
+      \item Thm: The characteristic polynomial of a linear operator of a space that is a direct sum of invariant subspaces
+    \end{itemize}
   \end{itemize}
   \item The criterion of diagonalizable linear operators
   \begin{itemize}
     \item Def: Diagonalizable linear operator
-    \item Rmk: A equivalent condition for a linear operator to be diagonalizable in terms of eigenvectors
+    \item Thm: A necessary and sufficient condition for a linear operator to be diagonalizable in terms of eigenvectors
+    \item Lma: The eigenspaces of different eigenvalues are linear independent
+    \item Def: The spectrum of a linear operator, the spectrum of a square matrix, 谱点 and 单谱点
+    \item Thm: A sufficient condition for a linear operator to be diagonalizable in terms of 单谱点
+    \item Thm: A necessary and sufficient condition for a linear operator to be diagonalizable in terms of 谱点
   \end{itemize}
   \item The existence of invariant subspaces
+  \begin{itemize}
+    \item Thm: A linear operator of a space over an algebraically closed field has one-dimensional invariant subspace(s)
+    \item Thm: A linear operator of a space over the real number field has one-dimensional or two-dimensional invariant subspace(s)
+  \end{itemize}
 \end{itemize}
 
 \section{Invariant subspace}
@@ -140,7 +167,11 @@
 \section{Eigenvectors and characteristic polynomial}
 
 \begin{definition}[Eigenvector and eigenvalue of a linear operator]
-  
+  A non-zero vector $v$ in a space $V$ is called an eigenvector of a linear operator $\mathcal{A}: V \to V$ on $V$ if there exists $\lambda \in K$ such that
+  \[
+    \mathcal{A}v = \lambda v
+  \]
+  The scalar $\lambda$ is called an eigenvalue of $\mathcal{A}$ that corresponds to the eigenvector $v$.
 \end{definition}
 
 \begin{remark}[Connection between eigenvectors and invariant subspaces]
@@ -163,6 +194,13 @@
     an invariant subspace for $\mathcal{A}$.
   \end{description}
 \end{remark}
+
+\begin{definition}[Eigenspace and geometric multiplicity of an eigenvalue]
+  The eigenspace of an eigenvalue $\lambda$ of a linear operator $\mathcal{A}$, 
+  denoted by $V^{\lambda}$, is defined as the set of vectors $V^{\lambda} = \lbrace 
+  v \in V \mid \mathcal{A}v = \lambda v \rbrace$. The dimension of the eigenspace 
+  is called the geometric multiplicity of the eigenvalue $\lambda$.
+\end{definition}
 
 \section{The criterion of diagonalizable linear operators}
 

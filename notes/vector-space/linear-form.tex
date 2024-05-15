@@ -25,7 +25,7 @@
 \newtheorem{remark}{Remark}
 \newtheorem{example}{Example}
 
-\title{Notes of "Linear Function"}
+\title{Notes of "Linear Form"}
 \author{Jinxin Wang}
 \date{}
 
@@ -35,22 +35,88 @@
 
 \section{Overview}
 \begin{itemize}
-  \item Def: A linear form (or linear functional or covector) of a vector space
-  \item Examples of linear forms of vector spaces
+  \item Linear form, dual space and dual basis of a vector space
   \begin{itemize}
-    \item Eg: $f(x_1, x_2, \cdots, x_n) = \Sigma_{i=1}^n a_ix_i$ is a linear map from $K^n$ to $K$
-    \item Eg: $\int_a^b f(x)dx$ is a linear map from the space of all continuous functions on $\left[ a, b \right]$ to $\mathbb{R}$
-    \item Eg: $Tr: M_n(\mathbb{R}) \to \mathbb{R}, M \mapsto Tr(M)$ is a linear map from $M_n(\mathbb{R})$ to $\mathbb{R}$
+    \item Def: A linear form (or linear functional or covector) of a vector space
+    \item Examples of linear forms of vector spaces
+    \begin{itemize}
+      \item Eg: $f(x_1, x_2, \cdots, x_n) = \Sigma_{i=1}^n a_ix_i$ is a linear map from $K^n$ to $K$
+      \item Eg: $\int_a^b f(x)dx$ is a linear map from the space of all continuous functions on $\left[ a, b \right]$ to $\mathbb{R}$
+      \item Eg: $Tr: M_n(\mathbb{R}) \to \mathbb{R}, M \mapsto Tr(M)$ is a linear map from $M_n(\mathbb{R})$ to $\mathbb{R}$
+    \end{itemize}
+    \item Rmk: A necessary and sufficient condition to determine a linear form of a space
+    \item Rmk: The set of linear forms from a vector space $V$ to its field $K$ is a subspace of $K^V$
+    \item Def: The dual space of a vector space
+    \item Rmk: A basis of the dual space of a finite-dimensional space
+    \item Thm: The dimension of the dual space of a finite-dimensional space and the dual basis of a basis of the space
+    \item Examples of dual space and dual basis
+    \begin{itemize}
+      \item Eg: The dual space of $P_n = \left\langle 1, t, t^2, \ldots, t^{n-1} \right\rangle$ and the dual basis of the basis $1, t, t^2, \ldots, t^{n-1}$ of the space $P_n$
+      \item Eg: The dual space of $V = \left\langle \sin t, \sin 2t, \sin 3t, \ldots, \sin nt \right\rangle$ and the dual basis of the basis $\sin t, \sin 2t, \sin 3t, \ldots, \sin nt$ of the space $V$
+    \end{itemize}
   \end{itemize}
-  \item Rmk: A necessary and sufficient condition to determine a linear form of a space
-  \item Rmk: The set of linear forms from a vector space $V$ to its field $K$ is a subspace of $K^V$
-  \item Def: The dual space of a vector space
-  \item Rmk: A basis of the dual space of a finite-dimensional space
-  \item Thm: The dimension of the dual space of a finite-dimensional space and the dual basis of a basis of the space
-  \item Examples of dual space and dual basis
+  \item A natural isomorphism from a space to the dual space of its dual space
   \begin{itemize}
-    \item Eg:
+    \item Rmk: The motivation of examining $V^{**}$
+    \item Thm: The map $f: x \mapsto f_x$ where $f_x: V^* \to K, \alpha \mapsto \alpha(x)$ is a (linear) isomorphism from $V$ to $V^{**}$
+    \begin{itemize}
+      \item Rmk: The (linear) isomorphism $f: x \mapsto f_x$ is natural
+      \item Rmk: The symmetry between $V$ and $V^*$ through the isomorphism from $V$ to $V^{**}$
+    \end{itemize}
+    \item Cor: The one-to-one correspondence between basis of $V$ and basis of $V^*$
+    \item Rmk: The conclusion about the equality of the dimension of a finite-dimensional space and the dimension of its dual space doesn't hold for infinite-dimensional spaces and the counterexample of $K\left\lvert x \right\rvert$
+  \end{itemize}
+  \item Application of linear form: determine the rank of a set of vector in a space
+  \begin{itemize}
+    \item Lma: The determinant of $n$ linear forms on $n$ linear dependent vectors in a space is $0$
+    \item Lma: A necessary and sufficient condition for a set of vectors to be linear independent in terms of the determinant of a basis of $V^*$ on those vectors
+    \item Thm: The rank of a set of vectors in a space $V$ is the same as the rank of the matrix consists of the basis of $V^*$ on those vectors
+  \end{itemize}
+  \item A natural correspondence from subspaces of a space to subspaces of its dual space
+  \begin{itemize}
+    \item Def: The annihilator of a subspace of a space
+    \begin{itemize}
+      \item Rmk: The annihilator of a subspace of a space is a subspace of its dual space
+    \end{itemize}
+    \item Thm: The dimension of the annihilator in terms of the dimension of the space and the subspace
+    \item Thm: The annihilator of the annihilator of a subspace give rise to the subspace itself under the isomorphism
+    \item Cor: The correspondence between subspaces of a space and subspaces of its dual space in terms of annihilators
+  \end{itemize}
+  \item A geometric interpretation of the solution space of a homogeneous linear system
+  \begin{itemize}
+    \item Rmk: The generalization of homogeneous linear systems on a vector space
+    \item Thm: The dimension of the solution space can be determined by the dimension of the space and the rank of the set of linear forms
+    \item Thm: Every subspace of a vector space is the solution space of a homogeneous linear system on the space
   \end{itemize}
 \end{itemize}
+
+\section{Linear form, dual space and dual basis of a vector space}
+
+\section{A natural isomorphism from a space to the dual space of its dual space}
+
+\begin{theorem}[The map $f: x \mapsto f_x$ where $f_x: V^* \to K, \alpha \mapsto \alpha(x)$ is a (linear) isomorphism from $V$ to $V^{**}$]
+  The map $f: x \mapsto f_x$ where $f_x: V^* \to K, \alpha \mapsto \alpha(x)$ is a (linear) isomorphism from $V$ to $V^{**}$
+\end{theorem}
+\begin{proof}
+  First, we need to prove that $f_x: V^* \to K, \alpha \mapsto \alpha(x)$ is a linear form of $V^*$.
+  \[
+    \begin{split}
+      f_x(a \alpha + b \beta) &= (a \alpha + b \beta)(x) \\
+                              &= a(\alpha(x)) + b(\beta(x)) \\
+                              &= a(f_x(\alpha)) + b(f_x(\beta))
+    \end{split}
+  \]
+  From this we can confirm that $f: x \mapsto f_x$ is a map from $V$ to $V^{**}$.
+
+  Second, we need to prove that $f$ is a linear map from $V$ to $V^{**}$.
+
+  Third, we need to prove that $f$ is bijective. To prove this, we can prove that $f$ maps a basis of $V$ to a basis of $V^{**}$.
+\end{proof}
+
+\section{Application of linear form: determine the rank of a set of vector in a space}
+
+\section{A natural correspondence from subspaces of a space to subspaces of its dual space}
+
+\section{A geometric interpretation of the solution space of a homogeneous linear system}
 
 \end{document}
